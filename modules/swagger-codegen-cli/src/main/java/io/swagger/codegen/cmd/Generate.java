@@ -209,13 +209,13 @@ public class Generate implements Runnable {
             configurator.setAuth(auth);
         }
 
-        if (isNotEmpty(templateDir)) {
+       /* if (isNotEmpty(templateDir)) {
             configurator.setTemplateDir(templateDir);
-        }
+        }*/
 
-        if (isNotEmpty(apiPackage)) {
+        /*if (isNotEmpty(apiPackage)) {
             configurator.setApiPackage(apiPackage);
-        }
+        }*/
 
         if (isNotEmpty(modelPackage)) {
             configurator.setModelPackage(modelPackage);
@@ -229,9 +229,9 @@ public class Generate implements Runnable {
             configurator.setModelNameSuffix(modelNameSuffix);
         }
 
-        if (isNotEmpty(invokerPackage)) {
+      /*  if (isNotEmpty(invokerPackage)) {
             configurator.setInvokerPackage(invokerPackage);
-        }
+        }*/
 
         if (isNotEmpty(groupId)) {
             configurator.setGroupId(groupId);
@@ -261,9 +261,9 @@ public class Generate implements Runnable {
             configurator.setReleaseNote(releaseNote);
         }
 
-        if (isNotEmpty(httpUserAgent)) {
+      /*  if (isNotEmpty(httpUserAgent)) {
             configurator.setHttpUserAgent(httpUserAgent);
-        }
+        }*/
 
         if (isNotEmpty(ignoreFileOverride)) {
             configurator.setIgnoreFileOverride(ignoreFileOverride);

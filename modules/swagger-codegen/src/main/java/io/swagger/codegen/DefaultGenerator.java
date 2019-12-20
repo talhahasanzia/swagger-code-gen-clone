@@ -70,7 +70,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
      */
     @SuppressWarnings("WeakerAccess")
     public void setGenerateSwaggerMetadata(Boolean generateSwaggerMetadata) {
-        this.isGenerateSwaggerMetadata = generateSwaggerMetadata;
+        this.isGenerateSwaggerMetadata = Boolean.FALSE;
     }
 
     /**
@@ -171,13 +171,13 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
 
 
         // Additional properties added for tests to exclude references in project related files
-        config.additionalProperties().put(CodegenConstants.GENERATE_API_TESTS, isGenerateApiTests);
-        config.additionalProperties().put(CodegenConstants.GENERATE_MODEL_TESTS, isGenerateModelTests);
+        config.additionalProperties().put(CodegenConstants.GENERATE_API_TESTS, Boolean.FALSE);
+        config.additionalProperties().put(CodegenConstants.GENERATE_MODEL_TESTS, Boolean.FALSE);
 
-        config.additionalProperties().put(CodegenConstants.GENERATE_API_DOCS, isGenerateApiDocumentation);
-        config.additionalProperties().put(CodegenConstants.GENERATE_MODEL_DOCS, isGenerateModelDocumentation);
+        config.additionalProperties().put(CodegenConstants.GENERATE_API_DOCS, Boolean.FALSE);
+        config.additionalProperties().put(CodegenConstants.GENERATE_MODEL_DOCS, Boolean.FALSE);
 
-        config.additionalProperties().put(CodegenConstants.GENERATE_APIS, isGenerateApis);
+        config.additionalProperties().put(CodegenConstants.GENERATE_APIS, Boolean.FALSE);
         config.additionalProperties().put(CodegenConstants.GENERATE_MODELS, isGenerateModels);
 
         if(!isGenerateApiTests && !isGenerateModelTests) {
@@ -438,7 +438,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
                 }
                 if(isGenerateModelDocumentation) {
                     // to generate model documentation files
-                    generateModelDocumentation(files, models, modelName);
+                    //generateModelDocumentation(files, models, modelName);
                 }
             } catch (Exception e) {
                 throw new RuntimeException("Could not generate model '" + modelName + "'", e);
@@ -668,7 +668,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
         final String swaggerCodegenIgnore = ".swagger-codegen-ignore";
         String ignoreFileNameTarget = config.outputFolder() + File.separator + swaggerCodegenIgnore;
         File ignoreFile = new File(ignoreFileNameTarget);
-        if (isGenerateSwaggerMetadata && !ignoreFile.exists()) {
+        if (false) {
             String ignoreFileNameSource = File.separator + config.getCommonTemplateDir() + File.separator + swaggerCodegenIgnore;
             String ignoreFileContents = readResourceContents(ignoreFileNameSource);
             try {
@@ -679,7 +679,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
             files.add(ignoreFile);
         }
 
-        if(isGenerateSwaggerMetadata) {
+        if(false) {
             final String swaggerVersionMetadata = config.outputFolder() + File.separator + ".swagger-codegen" + File.separator + "VERSION";
             File swaggerVersionMetadataFile = new File(swaggerVersionMetadata);
             try {
@@ -774,11 +774,11 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
         generateModels(files, allModels);
         // apis
         List<Object> allOperations = new ArrayList<Object>();
-        generateApis(files, allOperations, allModels);
+        //generateApis(files, allOperations, allModels);
 
         // supporting files
         Map<String, Object> bundle = buildSupportFileBundle(allOperations, allModels);
-        generateSupportingFiles(files, bundle);
+        //generateSupportingFiles(files, bundle);
         config.processSwagger(swagger);
         return files;
     }

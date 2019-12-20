@@ -299,6 +299,9 @@
         </profile>
         <profile>
             <id>release-sign-artifacts</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>performRelease</name>
@@ -326,6 +329,9 @@
         <!-- Samples -->
         <profile>
             <id>android-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -338,6 +344,9 @@
         </profile>
         <profile>
             <id>bash-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -350,6 +359,9 @@
         </profile>
         <profile>
             <id>clojure-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -362,6 +374,10 @@
         </profile>
         <profile>
             <id>haskell-http-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
+		
             <activation>
                 <property>
                     <name>env</name>
@@ -374,6 +390,9 @@
         </profile>
         <profile>
             <id>haskell-http-client-integration-test</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -386,6 +405,9 @@
         </profile>
         <profile>
             <id>java-client-jersey1</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -398,6 +420,9 @@
         </profile>
         <profile>
             <id>java-client-jersey2</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -410,6 +435,9 @@
         </profile>
         <profile>
             <id>java-client-jersey2-java6</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -422,6 +450,9 @@
         </profile>
         <profile>
             <id>java-client-okhttp-gson</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -434,6 +465,9 @@
         </profile>
         <profile>
             <id>java-client-okhttp-gson-parcelable</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -446,6 +480,9 @@
         </profile>
         <profile>
             <id>java-client-retrofit</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -458,6 +495,9 @@
         </profile>
         <profile>
             <id>java-client-retrofit2</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -470,6 +510,9 @@
         </profile>
         <profile>
             <id>java-client-retrofit2-rx</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -482,6 +525,9 @@
         </profile>
         <profile>
             <id>java-client-feign</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -494,6 +540,9 @@
         </profile>
         <profile>
             <id>javascript-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -506,6 +555,9 @@
         </profile>
         <profile>
             <id>scala-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -518,6 +570,9 @@
         </profile>
         <profile>
             <id>objc-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -530,6 +585,9 @@
         </profile>
         <profile>
             <id>swift-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -542,6 +600,9 @@
         </profile>
         <profile>
             <id>java-msf4j-server</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -554,6 +615,9 @@
         </profile>
         <profile>
             <id>jaxrs-cxf-server</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -566,6 +630,9 @@
         </profile>
         <profile>
             <id>jaxrs-resteasy-server</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -578,6 +645,9 @@
         </profile>
         <profile>
             <id>jaxrs-resteasy-server-joda</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -590,6 +660,9 @@
         </profile>
         <profile>
             <id>jaxrs-resteasy-eap-server</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -602,6 +675,9 @@
         </profile>
         <profile>
             <id>jaxrs-resteasy-eap-server-joda</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -614,6 +690,9 @@
         </profile>
         <profile>
             <id>jaxrs-server</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -626,6 +705,9 @@
         </profile>
         <profile>
             <id>jaxrs-server-jersey1</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -638,6 +720,9 @@
         </profile>
         <profile>
             <id>typescript-fetch-client-tests-default</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -650,6 +735,9 @@
         </profile>
         <profile>
             <id>typescript-fetch-client-builds-default</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -662,6 +750,9 @@
         </profile>
         <profile>
             <id>typescript-fetch-client-builds-es6-target</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -674,6 +765,9 @@
         </profile>
         <profile>
             <id>typescript-fetch-client-builds-with-npm-version</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -686,6 +780,9 @@
         </profile>
         <profile>
             <id>typescript-angularjs-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -698,6 +795,9 @@
         </profile>
         <profile>
             <id>typescript-node-npm-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -710,6 +810,9 @@
         </profile>
         <profile>
             <id>python-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -722,6 +825,9 @@
         </profile>
         <profile>
             <id>ruby-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -734,6 +840,9 @@
         </profile>
         <profile>
             <id>go-client</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -746,6 +855,9 @@
         </profile>
         <profile>
             <id>spring-mvc</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -758,6 +870,9 @@
         </profile>
         <profile>
             <id>springboot-beanvalidation</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -770,6 +885,9 @@
         </profile>
         <profile>
             <id>springboot</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -782,6 +900,9 @@
         </profile>
         <profile>
             <id>spring-cloud</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -794,6 +915,9 @@
         </profile>
         <profile>
             <id>scalatra-server</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -806,6 +930,9 @@
         </profile>
         <profile>
             <id>java-inflector</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -818,6 +945,9 @@
         </profile>
         <profile>
             <id>java-undertowr</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -830,6 +960,9 @@
         </profile>
         <profile>
             <id>samples</id>
+			<properties>
+                <skipTests>true</skipTests>
+            </properties>
             <activation>
                 <property>
                     <name>env</name>
@@ -956,5 +1089,7 @@
         <jmockit-version>1.25</jmockit-version>
         <reflections-version>0.9.11</reflections-version>
         <snakeyaml-version>1.24</snakeyaml-version>
+		<skipTests>true</skipTests>
+            
     </properties>
 </project>
