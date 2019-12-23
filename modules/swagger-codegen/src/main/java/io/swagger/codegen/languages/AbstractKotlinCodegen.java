@@ -24,7 +24,7 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
     protected String groupId = "io.swagger";
     protected String packageName;
 
-    protected String sourceFolder = "src/main/kotlin";
+    protected String sourceFolder = "";
 
     protected String apiDocPath = "docs/";
     protected String modelDocPath = "docs/";
@@ -301,13 +301,13 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
         }
 
         if (additionalProperties.containsKey(CodegenConstants.PACKAGE_NAME)) {
-            this.setPackageName((String) additionalProperties.get(CodegenConstants.PACKAGE_NAME));
+            this.setPackageName("");
             if (!additionalProperties.containsKey(CodegenConstants.MODEL_PACKAGE))
-                this.setModelPackage(packageName + ".models");
+                this.setModelPackage("models");
             if (!additionalProperties.containsKey(CodegenConstants.API_PACKAGE))
                 this.setApiPackage(packageName + ".apis");
         } else {
-            additionalProperties.put(CodegenConstants.PACKAGE_NAME, packageName);
+            additionalProperties.put(CodegenConstants.PACKAGE_NAME, "");
         }
 
         if (additionalProperties.containsKey(CodegenConstants.ARTIFACT_ID)) {
@@ -352,7 +352,7 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
     }
 
     public void setPackageName(String packageName) {
-        this.packageName = packageName;
+        this.packageName = "";
     }
 
     public void setSourceFolder(String sourceFolder) {

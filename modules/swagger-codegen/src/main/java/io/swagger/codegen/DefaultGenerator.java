@@ -1035,7 +1035,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
 
     protected Map<String, Object> processModels(CodegenConfig config, Map<String, Model> definitions, Map<String, Model> allDefinitions) {
         Map<String, Object> objs = new HashMap<String, Object>();
-        objs.put("package", config.modelPackage());
+        objs.put("package", "");
         List<Object> models = new ArrayList<Object>();
         Set<String> allImports = new LinkedHashSet<String>();
         for (String key : definitions.keySet()) {

@@ -38,7 +38,7 @@ public class KotlinClientCodegen extends AbstractKotlinCodegen {
         super();
 
         artifactId = "kotlin-client";
-        packageName = "io.swagger.client";
+        packageName = "";
 
         outputFolder = "generated-code" + File.separator + "kotlin-client";
         modelTemplateFiles.put("model.mustache", ".kt");
@@ -47,7 +47,7 @@ public class KotlinClientCodegen extends AbstractKotlinCodegen {
         apiDocTemplateFiles.put("api_doc.mustache", ".md");
         embeddedTemplateDir = templateDir = "kotlin-client";
         apiPackage = packageName + ".apis";
-        modelPackage = packageName + ".models";
+        modelPackage = "models";
 
         CliOption dateLibrary = new CliOption(DATE_LIBRARY, "Option. Date library to use");
         Map<String, String> dateOptions = new HashMap<>();

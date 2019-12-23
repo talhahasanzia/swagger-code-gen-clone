@@ -2,12 +2,7 @@ package io.swagger.codegen.config;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
-import io.swagger.codegen.CliOption;
-import io.swagger.codegen.ClientOptInput;
-import io.swagger.codegen.ClientOpts;
-import io.swagger.codegen.CodegenConfig;
-import io.swagger.codegen.CodegenConfigLoader;
-import io.swagger.codegen.CodegenConstants;
+import io.swagger.codegen.*;
 import io.swagger.codegen.auth.AuthParser;
 import io.swagger.models.Swagger;
 import io.swagger.models.auth.AuthorizationValue;
@@ -21,11 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
@@ -63,11 +54,11 @@ public class CodegenConfigurator implements Serializable {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private Map<String, String> importMappings = new HashMap<String, String>();
     private Set<String> languageSpecificPrimitives = new HashSet<String>();
-    private Map<String, String>  reservedWordMappings = new HashMap<String, String>();
+    private Map<String, String> reservedWordMappings = new HashMap<String, String>();
 
-    private String gitUserId="GIT_USER_ID";
-    private String gitRepoId="GIT_REPO_ID";
-    private String releaseNote="Minor update";
+    private String gitUserId = "GIT_USER_ID";
+    private String gitRepoId = "GIT_REPO_ID";
+    private String releaseNote = "Minor update";
     private String httpUserAgent;
 
     private final Map<String, Object> dynamicProperties = new HashMap<String, Object>(); //the map that holds the JsonAnySetter/JsonAnyGetter values
@@ -352,11 +343,11 @@ public class CodegenConfigurator implements Serializable {
     }
 
     public CodegenConfigurator setHttpUserAgent(String httpUserAgent) {
-        this.httpUserAgent= httpUserAgent;
+        this.httpUserAgent = httpUserAgent;
         return this;
     }
 
-    public  Map<String, String> getReservedWordsMappings() {
+    public Map<String, String> getReservedWordsMappings() {
         return reservedWordMappings;
     }
 
@@ -452,8 +443,7 @@ public class CodegenConfigurator implements Serializable {
             String opt = langCliOption.getOpt();
             if (dynamicProperties.containsKey(opt)) {
                 codegenConfig.additionalProperties().put(opt, dynamicProperties.get(opt));
-            }
-            else if(systemProperties.containsKey(opt)) {
+            } else if (systemProperties.containsKey(opt)) {
                 codegenConfig.additionalProperties().put(opt, systemProperties.get(opt));
             }
         }
@@ -482,8 +472,14 @@ public class CodegenConfigurator implements Serializable {
     }
 
     private static String toAbsolutePathStr(String path) {
-        if (isNotEmpty(path)) {
-            return Paths.get(path).toAbsolutePath().toString();
+
+        LOGGER.info("Output path:" + path);
+        try {
+            if (isNotEmpty(path)) {
+                return Paths.get(path).toAbsolutePath().toString();
+            }
+        } catch (Exception e) {
+            LOGGER.info(e.getMessage());
         }
 
         return path;
